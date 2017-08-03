@@ -83,30 +83,5 @@ public class HttpUtils {
 			return httpClient;
 		}
 	}
-	public static void main(String[] args) throws ClientProtocolException, IOException {
-		long startTime = System.currentTimeMillis();
-		final CloseableHttpClient httpClient2 = getHttpClient();
-		System.out.println(System.currentTimeMillis() - startTime);
-		//httpClient2 = getHttpClient();
-		int i = 100;
-		while(i > 0) {
-			new Thread(){
-				public void run() {
-					try {
-						CloseableHttpResponse response = httpClient2.execute(new HttpGet("https://baidu.com"));
-						EntityUtils.consume(response.getEntity());
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-
-				};
-			}.start();
-			//EntityUtils.toString(response.getEntity());
-			i--;
-		}
-		System.out.println(System.currentTimeMillis() - startTime);
-
-		
-	}
+	
 }
