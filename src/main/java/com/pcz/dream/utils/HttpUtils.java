@@ -93,7 +93,7 @@ public class HttpUtils {
 			new Thread(){
 				public void run() {
 					try {
-						CloseableHttpResponse response = httpClient2.execute(new HttpGet("https://a.zhongan.com"));
+						CloseableHttpResponse response = httpClient2.execute(new HttpGet("https://baidu.com"));
 						EntityUtils.consume(response.getEntity());
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
